@@ -1,15 +1,13 @@
 //find heights and lowes temp and find if there is anything else number
 
-let temparature = [10,12,5,"hi",7.5,13,15,16];
+let temparature = [-2,4,45,23,-4,"error",-6,-8,34,43];
 
+let err , heights = 0, lowest = 0;
 function findHeightAndLowestTemp(arr){
-    let err , heights = 0, lowest = 0;
     for (let index = 0; index < arr.length; index++) {
-        if(typeof arr[index] !== "number"){
-            err = arr[index]
-        }else if(arr[index] > heights){
+        if(heights < arr[index]){
             heights = arr[index]
-        }else if(arr[index] < heights){
+        }else if(lowest > arr[index]){
             lowest = arr[index]
         }
     }

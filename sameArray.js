@@ -50,5 +50,27 @@ function sameArray2(arr1,arr2){
     }
 }
 
+//way 2
+function sameArray3(arr1,arr2){
 
-console.log(sameArray2([0,2,3,6,10],[9,100,0,4,36]))
+    let trueCount = 0;
+
+    if(arr1.length === arr2.length){
+        for (let index = 0; index < arr1.length; index++) {
+            arr1[index] = arr1[index] ** 2
+        }
+        
+        const sorted = arr1.sort()
+        const sorted2 = arr2.sort()
+
+        if(JSON.stringify(sorted) === JSON.stringify(sorted2)){
+            return true
+        }else{
+            return false
+        }
+    }else{
+        return false;
+    }
+}
+
+console.log(sameArray3([2,3,6,0,10],[9,4,100,36,0]))
